@@ -23,5 +23,7 @@
 
 @include("mainViews.navbar")
     @yield('content')
+
+
 </body>
 </html>

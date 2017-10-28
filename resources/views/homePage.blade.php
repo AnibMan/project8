@@ -1,7 +1,7 @@
 @extends("mainViews.mainHTML")
 
 @section("content")
-    <div class="row" id="mainRow">
+    <div class="row" id="mainRow" >
 
         <div class="col-sm-6 col-xs-12 col-lg-6 col-md-6" id="descriptionRow">
             <h1 style="color: springgreen"><b>Welcome!</b></h1>

@@ -1,48 +1,36 @@
-<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-fixed-top" style="text-align: center">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Project Name</a>
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
 
+            <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li style="background-color:green;margin-right: 2px"><a href="#"><b><font color="white"> Signin</font></b></a></li>
-            <li style="background-color:deepskyblue;margin-right: 2px"><a href="#"><b><font color="white"> Signup</font></b></a></li>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li> <!-- search bar -->
+                    <form class="navbar-form navbar-right" style="margin-left: 5%" >
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    Search
+                                </button>
 
-        </ul>
-        <form class="navbar-form navbar-right" style="padding-right: 2%" >
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        Search
-                    </button>
+                            </div>
 
-                </div>
-
-            </div>
-        </form>
-
-
-        <div class="collapse navbar-collapse navHeaderCollapse">
-            <ul class="nav navbar-nav ">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                        </div>
+                    </form></li>
             </ul>
-
-
-
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
         </div>
-
     </div>
-
 </nav>
-
-<div style="float: right;font-size: 25px">
-
-</div>

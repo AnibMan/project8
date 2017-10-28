@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Project Name</a>

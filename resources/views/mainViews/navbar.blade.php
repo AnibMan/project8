@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default navbar-fixed-top" style="text-align: center">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -13,9 +14,9 @@
             <a class="navbar-brand" href="#">WebSiteName</a>
 
         </div>
-        <form class="navbar-form navbar-right">
+        <form class="navbar-form navbar-right" >
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Search" >
                 <div class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         Search

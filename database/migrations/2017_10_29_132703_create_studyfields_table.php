@@ -15,9 +15,9 @@ class CreateStudyfieldsTable extends Migration
     {
         Schema::create('studyfields', function (Blueprint $table) {
             $table->increments('sf_id');
-            $table->string('faculty',50)->unique();
-            $table->string('level',30)->unique();
-            $table->string('degree',75)->unique();
+            $table->string('faculty',50);
+            $table->string('level',30);
+            $table->string('degree',75);
         });
     }
 

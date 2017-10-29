@@ -7,14 +7,16 @@ text-align: center;
 #descriptionRow
 {
     text-align: center;
-    padding-top: 20px;
+    padding:0px;
+
 }
 
 #mainRow {
     background-color: lightseagreen;
-    width: 101%;
+    width: auto;
     padding-top: 100px;
-    height: 60vh;
-
-
+    height: auto;
+}
+#form-search{
+    padding-bottom: 20px;
 }

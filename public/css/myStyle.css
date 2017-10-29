@@ -1,0 +1,20 @@
+#searchRow
+{
+text-align: center;
+
+}
+
+#descriptionRow
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+#mainRow {
+    background-color: lightseagreen;
+    width: 101%;
+    padding-top: 100px;
+    height: 60vh;
+
+
+}

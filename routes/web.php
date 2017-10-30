@@ -15,4 +15,6 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/getDegreeAjax/{faculty}/{level}', 'HomeController@getDegree');
 
+Route::get('/getSubjectAjax/{semester}/{degree}', 'HomeController@getSemester');
+
 

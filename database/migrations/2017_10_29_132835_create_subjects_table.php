@@ -16,7 +16,7 @@ class CreateSubjectsTable extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->increments('sub_id');
             $table->integer('sf_id')->unsigned();
-            $table->string('sub_name',30);
+            $table->string('sub_name',150);
 
             $table->foreign('sf_id')
                 ->references('sf_id')

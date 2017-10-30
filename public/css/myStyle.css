@@ -1,22 +1,20 @@
 #searchRow
 {
-text-align: center;
+
 
 }
 
 #descriptionRow
 {
     text-align: center;
-    padding:0px;
+
 
 }
 
 #mainRow {
     background-color: lightseagreen;
-    width: auto;
+    font-family: Rockwell;
     padding-top: 100px;
     height: auto;
-}
-#form-search{
-    padding-bottom: 20px;
+
 }

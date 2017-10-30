@@ -28,7 +28,7 @@ class HomeController extends Controller
         return Response::json($degree);
     }
 
-    public function getSemester($semester,$degree)
+    public function getSubject($semester,$degree)
     {
         $id = Studyfield::where("degree",$degree)->pluck('sf_id');
 

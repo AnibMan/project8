@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homePage');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/getDegreeAjax/{faculty}/{level}', 'HomeController@getDegree');
+
 

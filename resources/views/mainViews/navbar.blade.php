@@ -29,8 +29,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><font color="#20b2aa"> <span class="glyphicon glyphicon-user"></span>  Sign Up </font></a></li>
-                <li><a href="#"><font color="#1e90ff"> <span class="glyphicon glyphicon-log-in"></span> Login</font></a></li>
+                <li><a href="/register"><font color="#20b2aa"> <span class="glyphicon glyphicon-user"></span>  Sign Up </font></a></li>
+                <li><a href="/login"><font color="#1e90ff"> <span class="glyphicon glyphicon-log-in"></span> Login </font></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Home</a></li>

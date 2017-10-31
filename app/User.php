@@ -18,6 +18,10 @@ class User extends Authenticatable
         'username', 'email', 'password',
     ];
 
+    public $timestamps = false;
+
+    public $primaryKey = 'u_id';
+
     /**
      * The attributes that should be hidden for arrays.
      *

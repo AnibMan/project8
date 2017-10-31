@@ -31,44 +31,6 @@
 @include("mainViews.navbar")
     @yield('content')
 
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
-<h1>Hello</h1>
 
 
 

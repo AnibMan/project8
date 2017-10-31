@@ -13,6 +13,7 @@
                 <h1> @include('search')</h1>
             </div>
 
+
         </div>
     </div>
 @stop

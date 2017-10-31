@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PrimeController@index');
 
-Route::get('/getDegreeAjax/{faculty}/{level}', 'HomeController@getDegree');
+Route::get('/getDegreeAjax/{faculty}/{level}', 'PrimeController@getDegree');
 
-Route::get('/getSubjectAjax/{semester}/{degree}', 'HomeController@getSubject');
+Route::get('/getSubjectAjax/{semester}/{degree}', 'PrimeController@getSubject');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

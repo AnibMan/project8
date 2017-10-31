@@ -10,6 +10,6 @@ class Subject extends Model
         'sub_name','sf_id','semester'
     ];
     public function studyfield(){
-        return $this->belongsTo("App\studyfield");
+        return $this->belongsTo("App\Studyfield");
     }
 }

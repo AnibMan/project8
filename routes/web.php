@@ -13,9 +13,9 @@
 
 Route::get('/', 'PrimeController@index');
 
-Route::get('/getDegreeAjax/{faculty}/{level}', 'PrimeController@getDegree');
+Route::get('/getDegreeAjax/{faculty}/{level}', 'AjaxResponse@getDegree');
 
-Route::get('/getSubjectAjax/{semester}/{degree}', 'PrimeController@getSubject');
+Route::get('/getSubjectAjax/{semester}/{degree}', 'AjaxResponse@getSubject');
 
 
 

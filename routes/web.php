@@ -17,7 +17,7 @@ Route::get('/getDegreeAjax/{faculty}/{level}', 'AjaxResponse@getDegree');
 
 Route::get('/getSubjectAjax/{semester}/{degree}', 'AjaxResponse@getSubject');
 
-
+Route::get('/requestQuestion', 'HomeController@requestQuestion');
 
 Auth::routes();
 

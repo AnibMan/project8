@@ -15,6 +15,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -31,5 +32,13 @@ class HomeController extends Controller
         $sf = Studyfield::groupBy("faculty")->pluck('faculty');
         $sfLvl = Studyfield::groupBy("level")->pluck('level');
         return view('home',compact("sf","sfLvl","username"));
+    }
+
+    public function requestQuestion()
+    {
+        $username = Auth::user()->username;
+        $sf = Studyfield::groupBy("faculty")->pluck('faculty');
+        $sfLvl = Studyfield::groupBy("level")->pluck('level');
+        return view("requestQuestion",compact("sf","sfLvl","username"));
     }
 }

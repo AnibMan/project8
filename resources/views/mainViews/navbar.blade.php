@@ -31,7 +31,7 @@
             @if(\Illuminate\Support\Facades\Auth::check())
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-user"></span> {{$username}}<span class="caret"></span></font></a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-education"></span> {{$username}}<span class="caret"></span></font></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-user"></span> Account</font></a></li>
                             <li>
@@ -60,7 +60,7 @@
                 </ul>
             @endif
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
+                <li><a href="#"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="#">Page 2</a></li>
                 <li> <!-- search bar -->
                 </li>

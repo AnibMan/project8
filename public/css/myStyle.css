@@ -1,13 +1,14 @@
 #searchRow
 {
-
+    margin-top: -25px;
+    padding-top: -25px;
 
 }
 
 #descriptionRow
 {
     text-align: center;
-
+    padding-top: 10px;
 
 }
 
@@ -15,6 +16,7 @@
     background-color: lightseagreen;
     font-family: Rockwell;
     padding-top: 100px;
-    height: auto;
+    padding-bottom: 30px;
+
 
 }

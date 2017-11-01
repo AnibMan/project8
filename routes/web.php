@@ -19,6 +19,10 @@ Route::get('/getSubjectAjax/{semester}/{degree}', 'AjaxResponse@getSubject');
 
 Route::get('/requestQuestion', 'HomeController@requestQuestion');
 
+Route::post('/requestQuestion', 'HomeController@storeQuestion');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

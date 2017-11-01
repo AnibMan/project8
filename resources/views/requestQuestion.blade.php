@@ -10,9 +10,9 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <!--Request/ask -->
                     <div class="form-group">
-                        <label for="InstitutionFaculty"><h3>Enter Question:</h3></label></br>
+                        <label for="InstitutionFaculty"><h3>Enter Request:</h3></label></br>
 
-                        <textarea class="form-control" rows="6"></textarea>
+                        <textarea class="form-control" rows="6" name="question"></textarea>
                     </div>
                     <!--Field of request -->
                     <div class="form-group" >
@@ -85,14 +85,24 @@
 
                     <input type="submit" name="Request" value="Request" class="btn btn-info">
 
+
+
+
                 </form>
+<div class="container-fluid" style="background-color: #880000;color: white;padding-bottom: 20px">
+            @if($errors->any())
+                <h3>Sorry Error Occoured:</h3>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            @endif
 
-
-
-
+</div>
 
         </div>
     </div>
+
+
 @endsection
 <script src="js/ajaxCall.js">
 

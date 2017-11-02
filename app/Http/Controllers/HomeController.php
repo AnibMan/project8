@@ -33,6 +33,8 @@ class HomeController extends Controller
         $username = Auth::user()->username;
         $sf = Studyfield::groupBy("faculty")->pluck('faculty');
         $sfLvl = Studyfield::groupBy("level")->pluck('level');
+
+
         return view('home',compact("sf","sfLvl","username"));
     }
 

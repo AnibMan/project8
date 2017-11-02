@@ -5,7 +5,9 @@
 function degreeAjax(){
     var opt = document.getElementById("InstitutionDegree");
     var resetSem = document.getElementById("InstitutionSem");
-    resetSem.selectedIndex = 0;
+    if(resetSem != null) {
+        resetSem.selectedIndex = 0;
+    }
     var len = opt.length;
 
 
@@ -17,14 +19,16 @@ function degreeAjax(){
     }
 
     var subj = document.getElementById("InstitutionSubject");
-    var lenSubj = subj.length;
+    if(subj != null){
+        var lenSubj = subj.length;
 
 
 
-    while(lenSubj!=0) {
-        subj.remove(0);
-        lenSubj--;
+        while(lenSubj!=0) {
+            subj.remove(0);
+            lenSubj--;
 
+        }
     }
 
 

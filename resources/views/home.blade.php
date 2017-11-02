@@ -24,8 +24,8 @@
         </div>
     </div>
 
-    {{--<div class="container" style="padding-top: 50px;float: left;margin-left: 50px">
+  <div class="container" style="padding-top: 50px;float: left;margin-left: 50px">
 
         @include("mainViews.showQuestion")
-    </div>--}}
+    </div>
 @endsection

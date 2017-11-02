@@ -18,7 +18,7 @@ class PrimeController extends Controller
         }else{
             $sf = Studyfield::groupBy("faculty")->pluck('faculty');
             $sfLvl = Studyfield::groupBy("level")->pluck('level');
-            $que = Question::pluck("que");
+            $que = Question::get();
 
             return view('homePage', compact("sf", "sfLvl" , "que"));
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Studyfield;
 use App\Subject;
+use App\studyfield_user;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests\CreateQuestion;
@@ -30,17 +31,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $username = Auth::user()->username;
+        $authUser = Auth::user();
+        $username = $authUser->username;
         $sf = Studyfield::groupBy("faculty")->pluck('faculty');
         $sfLvl = Studyfield::groupBy("level")->pluck('level');
 
+        $sf_id = studyfield_user::where('u_id',$authUser->u_id)->pluck('sf_id')->toArray();
 
-        return view('home',compact("sf","sfLvl","username"));
+        $que = Question::whereIn('sf_id', array_flatten($sf_id))->get();
+
+        return view('home',compact("sf","sfLvl","username","que"));
     }
 
     public function requestQuestion()
     {
-        $username = Auth::user()->username;
+        $authUser = Auth::user();
+        $username = $authUser->username;
         $sf = Studyfield::groupBy("faculty")->pluck('faculty');
         $sfLvl = Studyfield::groupBy("level")->pluck('level');
         return view("requestQuestion",compact("sf","sfLvl","username"));
@@ -68,5 +74,9 @@ class HomeController extends Controller
         return redirect('/home');
 
 
+    }
+
+    public function questionReply( $q_id){
+        return $q_id;
     }
 }

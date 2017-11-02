@@ -22,6 +22,9 @@ Route::get('/requestQuestion', 'HomeController@requestQuestion');
 Route::post('/requestQuestion', 'HomeController@storeQuestion');
 
 
+Route::get('/reply/{q_id}', 'HomeController@questionReply');
+
+
 
 Auth::routes();
 

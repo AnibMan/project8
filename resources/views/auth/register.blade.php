@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 <label for="InstitutionLevel" class="col-md-4 control-label">Level</label>
                                 <div class="col-md-6">
-                                    <select name="InstitutionLevel" id="InstitutionLevel" size="1"  class="form-control">
+                                    <select name="InstitutionLevel" id="InstitutionLevel" size="1" onchange="degreeAjax()" class="form-control">
 
                                         @foreach($sfLvl as $val)
                                             <option value="{{$val}}">{{$val}}</option>

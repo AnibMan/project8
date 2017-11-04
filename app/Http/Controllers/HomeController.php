@@ -66,16 +66,17 @@ class HomeController extends Controller
         $sub_id =  Subject::where('sub_name',$reqSub)->where('sf_id',$sf_id)->where('semester',$reqSem)->pluck('sub_id')->first();
         $que = $request->question;
 
-        Question::create(
-            [
-                'sf_id'=>$sf_id,
-                'u_id'=>$u_id,
-                'sub_id'=>$sub_id,
-                'que'=>$que
-            ]
-        );
+        $question = new Question;
 
-        return redirect('/home');
+
+        $question->sf_id = $sf_id;
+        $question->u_id = $u_id;
+        $question->sub_id = $sub_id;
+        $question-> que = $que;
+        $question->save();
+
+
+        return redirect('/reply/' . $question->id);
 
 
     }

@@ -22,8 +22,14 @@ Route::get('/requestQuestion', 'HomeController@requestQuestion');
 Route::post('/requestQuestion', 'HomeController@storeQuestion');
 
 
-Route::get('/reply/{q_id}', 'HomeController@questionReply');
+Route::get('/reply/{q_id}', 'PrimeController@questionReply');
 
+
+Route::get('/post/{q_id}', 'HomeController@post');
+
+Route::post('/post/{q_id}', 'HomeController@storePost');
+
+Route::get('/download/{filename}', 'PrimeController@downloadFile');
 
 
 Auth::routes();

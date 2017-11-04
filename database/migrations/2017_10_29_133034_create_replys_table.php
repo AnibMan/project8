@@ -16,7 +16,7 @@ class CreateReplysTable extends Migration
         Schema::create('replys', function (Blueprint $table) {
             $table->increments('r_id');
             $table->integer('u_id')->unsigned();
-            $table->integer('q_id')->unsigned();
+            $table->integer('q_id')->unsigned()->nullable();
             $table->string('rep',255);
             $table->string('attachment',255);
 

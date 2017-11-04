@@ -12,7 +12,7 @@
 
 
 
-            <a class="navbar-brand" href="#">WebSiteName</a>
+            <a class="navbar-brand" href="/">WebSiteName</a>
 
         </div>
         <form class="navbar-form navbar-right" >
@@ -60,8 +60,8 @@
                 </ul>
             @endif
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="#">Page 2</a></li>
+                <li><a href="/"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="#"> About</a></li>
                 <li> <!-- search bar -->
                 </li>
             </ul>

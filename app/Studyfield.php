@@ -13,4 +13,6 @@ class Studyfield extends Model
     public function subject(){
         return $this->hasMany("App\Subject","sf_id");
     }
+
+
 }

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePost;
+use App\Reply;
+use App\User;
 use Illuminate\Http\Request;
 use App\Studyfield;
 use App\Subject;
@@ -40,7 +43,8 @@ class HomeController extends Controller
 
         $que = Question::whereIn('sf_id', array_flatten($sf_id))->get();
 
-        return view('home',compact("sf","sfLvl","username","que"));
+
+        return view('home',compact("sf","sfLvl","username","que","q_user"));
     }
 
     public function requestQuestion()
@@ -62,7 +66,7 @@ class HomeController extends Controller
         $sub_id =  Subject::where('sub_name',$reqSub)->where('sf_id',$sf_id)->where('semester',$reqSem)->pluck('sub_id')->first();
         $que = $request->question;
 
-       Question::create(
+        Question::create(
             [
                 'sf_id'=>$sf_id,
                 'u_id'=>$u_id,
@@ -76,7 +80,51 @@ class HomeController extends Controller
 
     }
 
-    public function questionReply( $q_id){
-        return $q_id;
+
+
+    public function post($q_id ){
+
+        $authUser = Auth::user();
+        $username = $authUser->username;
+
+        return view('post',compact("username","q_id"));
     }
+
+    public function storePost(CreatePost $req ){
+
+        //to upload attachment file
+        if($req->hasFile('file')){
+            $filename = $req->file->getClientOriginalName();
+            $req->file->move('PostedFiles',$filename);
+            $rep = new Reply;
+            $rep->u_id = Auth::user()->u_id;
+            if($req->q_id != 'self'){
+                $rep->q_id = $req->q_id;
+            }
+            $rep->rep = $req->reply;
+            $rep->attachment = $filename;
+            $rep->save();
+            if($req->q_id != 'self') {
+                return redirect('/reply/' . $req->q_id);
+            }else return redirect('/home');
+
+
+        }
+        return 'error';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

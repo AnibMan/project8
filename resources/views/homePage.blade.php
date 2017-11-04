@@ -9,9 +9,9 @@
                     <h2>SEARCH. REQUEST. POST.</h2>
                     <h3 style="color: white">The hub of Purvanchal University. Search notes, papers or ask problems related to the exam.</h3>
                 <hr>
-                <h3>Request for your appeal:</h3><h2 ><a class="btn btn-info"><font size=4px>REQUEST</font></a></h2> <hr>
+                <h3>Request for your appeal:</h3><h2 ><a class="btn btn-info" href="/requestQuestion"><font size=4px>REQUEST</font></a></h2> <hr>
 
-                <h3>Post and share to grow:</h3><h2 ><a class="btn btn-info"><font size=4px>Post</font></a></h2>
+                <h3>Post and share to grow:</h3><h2 ><a class="btn btn-info" href="/post/self"> <font size=4px>Post</font></a></h2>
                 <hr>
 
             </div>

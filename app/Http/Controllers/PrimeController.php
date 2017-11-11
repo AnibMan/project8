@@ -8,6 +8,7 @@ use App\Subject;
 use App\Question;
 use App\User;
 use App\Reply;
+use App\Comment;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -41,7 +42,10 @@ class PrimeController extends Controller
 
         $reply = Reply::where('q_id',$q_id)->get();
 
-        return view("postReply",compact("que","username","sf","sub","queUser","reply"));
+        $comment = Comment::where('q_id',$q_id)->get();
+        //$comUser = User::where('u_id' , array_flatten($comment->u_id))->get();
+
+        return view("postReply",compact("que","username","sf","sub","queUser","reply","comment","comUser"));
     }
 
     public function downloadFile($filename){

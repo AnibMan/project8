@@ -23,6 +23,8 @@ Route::post('/requestQuestion', 'HomeController@storeQuestion');
 
 
 Route::get('/reply/{q_id}', 'PrimeController@questionReply');
+Route::post('/reply/{q_id}', 'HomeController@storeComment');
+
 
 
 Route::get('/post/{q_id}', 'HomeController@post');
@@ -31,7 +33,15 @@ Route::post('/post/{q_id}', 'HomeController@storePost');
 
 Route::get('/download/{filename}', 'PrimeController@downloadFile');
 
+Route::get('/account', 'HomeController@accountSettings');
+Route::post('/account', 'HomeController@updateUser');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*Route::get('/admin',function(){
+
+    return view('dash1.index');
+});*/

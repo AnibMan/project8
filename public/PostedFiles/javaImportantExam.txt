@@ -1,0 +1,16 @@
+important java:
+
+Long Question:
+1.Login->database valid
+2.Object input/output stream(serialization/deserialization)
+3.TCP/UDP Client program - Socket
+
+Short Question:
+
+1.Applet programming
+2.Thread programming
+3.Exception Handling
+4.RMI (Client-server handling)
+5.Java supports multiple inheritance
+6.Prepared statement(Database)->save and read
+7.Collection framework - Hashmap and vector

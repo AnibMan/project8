@@ -19,11 +19,46 @@
                             <span class="label label-success">Semester: {{$sub->semester}}</span>
                             <span class="label label-info">Subject: {{$sub->sub_name}}</span>
                         </h4>
-                    </div>
+                    </div><hr>
+                    @foreach($comment as $com)
+                        <div class="container">
+                            {{$com->com}}
+                        </div>
+                        <div class="container">
+                            {{App\User::find($com->u_id)->username}}
+                        </div>
+                    @endforeach
                 </div>
-                <button class="btn btn-default" style="margin-top: -30px">Comment</button>
+
 
                 <a class="btn btn-success" href="{{url('post/'.$que->q_id)}}" style="margin-top: -30px">Post Reply</a>
+
+                <button type="button" class="btn btn-default" style="margin-top: -8px;margin-bottom: 24px" data-toggle="collapse" data-target="#demo">Comment</button>
+
+                <div class="collapse" id="demo">
+                    <div class="jumbotron">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+
+
+
+                            <div class="form-group">
+                                <label><h3>Post comment:</h3></label></br>
+
+                                <textarea class="form-control" rows="4" name="comment"></textarea>
+                            </div>
+
+
+                            <input type="submit" name="postComment" value="Comment" class="btn btn-info">
+
+
+
+
+                        </form>
+                    </div>
+
+                </div>
 
             </div>
         </div>

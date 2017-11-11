@@ -10,6 +10,7 @@ use App\Studyfield;
 use App\Subject;
 use App\studyfield_user;
 use Illuminate\Support\Facades\Auth;
+use App\Comment;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests\CreateQuestion;
 use App\Question;
@@ -155,6 +156,22 @@ class HomeController extends Controller
 
 
     }
+<<<<<<< HEAD
+=======
+
+
+    public function storeComment(Request $req,$q_id){
+        $comment = new Comment;
+        $comment->com = $req->comment;
+        $comment->q_id = $q_id;
+        $comment->u_id = Auth::user()->u_id;
+        $comment->save();
+
+        return redirect()->back();
+
+    }
+
+>>>>>>> a00a1bae6eaf6fe77748c4dbcdb64a5c4f15d875
 
 
 

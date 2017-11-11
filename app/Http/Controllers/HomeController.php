@@ -168,6 +168,8 @@ class HomeController extends Controller
 
 
     }
+<<<<<<< HEAD
+=======
 
 
     public function storeComment(Request $req,$q_id){
@@ -181,6 +183,7 @@ class HomeController extends Controller
 
     }
 
+>>>>>>> a00a1bae6eaf6fe77748c4dbcdb64a5c4f15d875
 
 
 

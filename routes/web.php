@@ -39,9 +39,20 @@ Route::post('/account', 'HomeController@updateUser');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/profile', 'AdminController@showprofile');
+Route::get('/admin/update', 'AdminController@updateProfile');
+Route::get('/admin/user', 'AdminController@updateUser');
+
+
+
+
+=======
 
 
 /*Route::get('/admin',function(){
 
     return view('dash1.index');
 });*/
+>>>>>>> a00a1bae6eaf6fe77748c4dbcdb64a5c4f15d875

@@ -114,17 +114,47 @@ class HomeController extends Controller
         return 'error';
     }
 
+    public function accountSettings(){
+        $authUser = Auth::user();
+        $username = $authUser->username;
+
+        return view('accountSettings',compact("username","authUser"));
+    }
+
+    public function updateUser(Request $req){
+
+        $userVal = User::where("username",Auth::user()->username)->first();
+        if($req->has('submitUsername')){
+            $this->validate($req,['username' => 'required|string|max:25|unique:users']);
+            $userVal->username = $req->username;
+            $userVal->save();
+            return redirect()->back()->withErrors(['success'=>'Username Changed.']);
+        }
+        if($req->has('submitEmail')){
+            $this->validate($req,['email' => 'required|string|email|max:255|unique:users']);
+            $userVal->email = $req->email;
+            $userVal->save();
+            return redirect()->back()->withErrors(['success'=>'Email Changed.']);
+        }
+        if($req->has('submitPassword')){
+            $this->validate($req,['password' => 'required|string|min:6|confirmed', 'password_confirmation' => 'required|same:password','oldPass'=> 'required']);
+
+
+            if (\Hash::check($req->oldPass,$userVal->password))
+            {
+                $userVal->password = bcrypt($req->password);
+                $userVal->save();
+            }else{
+                return redirect()->back()->withErrors(['oldPass'=>'Current password did not match.']);
+            }
+            return redirect()->back()->withErrors(['success'=>'Password Changed']);
+
+        }
 
 
 
 
-
-
-
-
-
-
-
+    }
 
 
 

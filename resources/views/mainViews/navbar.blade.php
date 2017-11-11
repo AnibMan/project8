@@ -33,7 +33,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-education"></span> {{$username}}<span class="caret"></span></font></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-user"></span> Account</font></a></li>
+                            <li><a href="/account"><font color="#1e90ff"><span class="glyphicon glyphicon-user"></span> Account</font></a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();

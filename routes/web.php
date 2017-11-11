@@ -31,7 +31,17 @@ Route::post('/post/{q_id}', 'HomeController@storePost');
 
 Route::get('/download/{filename}', 'PrimeController@downloadFile');
 
+Route::get('/account', 'HomeController@accountSettings');
+Route::post('/account', 'HomeController@updateUser');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/profile', 'AdminController@showprofile');
+Route::get('/admin/update', 'AdminController@updateProfile');
+Route::get('/admin/user', 'AdminController@updateUser');
+
+
+
+

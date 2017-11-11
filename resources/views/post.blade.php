@@ -22,11 +22,13 @@
                     <input class="filestyle"  name="file" type="file">
                 </div>
 
+
+
+                @if($q_id == 'self')
+                    <label for="InstitutionFaculty"><h3>Tag Field of Study:</h3></label></br>
+                    @include("fieldOfStudy")
+                @endif
                 <input type="submit" name="PostReply" value="Post" class="btn btn-info">
-
-
-
-
             </form>
 
         </div>

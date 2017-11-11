@@ -63,6 +63,6 @@
 
 </div>
 
-<script src="js/ajaxCall.js">
+<script src="{{asset('js/ajaxCall.js')}}">
 
 </script>

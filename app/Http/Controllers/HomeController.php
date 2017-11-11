@@ -88,8 +88,14 @@ class HomeController extends Controller
 
         $authUser = Auth::user();
         $username = $authUser->username;
+        $sf = "";
+        $sfLvl = "";
+        if($q_id == 'self'){
+            $sf = Studyfield::groupBy("faculty")->pluck('faculty');
+            $sfLvl = Studyfield::groupBy("level")->pluck('level');
+        }
 
-        return view('post',compact("username","q_id"));
+        return view('post',compact("username","q_id","sf","sfLvl"));
     }
 
     public function storePost(CreatePost $req ){
@@ -102,6 +108,12 @@ class HomeController extends Controller
             $rep->u_id = Auth::user()->u_id;
             if($req->q_id != 'self'){
                 $rep->q_id = $req->q_id;
+                $quest = Question::where('q_id',$req->q_id)->first();
+                $rep->sf_id = $quest->sf_id;
+                $rep->sub_id =$quest->sub_id;
+            }else{
+                $rep->sf_id = Studyfield::where('degree',$req->InstitutionDegree)->pluck("sf_id")->first();
+                $rep->sub_id = Subject::where('sub_name',$req->InstitutionSubject)->pluck("sub_id")->first();
             }
             $rep->rep = $req->reply;
             $rep->attachment = $filename;

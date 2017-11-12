@@ -21,11 +21,11 @@
                         </h4>
                     </div><hr>
                     @foreach($comment as $com)
-                        <div class="container">
-                            {{$com->com}}
-                        </div>
-                        <div class="container">
-                            {{App\User::find($com->u_id)->username}}
+                        <div class="container-fluid">
+                            <h4><span class="glyphicon glyphicon-comment"></span> "{{$com->com}}"  -{{App\User::find($com->u_id)->username}}</h4>
+
+
+
                         </div>
                     @endforeach
                 </div>
@@ -80,7 +80,7 @@
                                 <?php $extention = pathinfo($rep->attachment, PATHINFO_EXTENSION) ?>
                                 @if($extention == 'jpg' or $extention == 'png' or $extention == 'JPEG' or  $extention == 'PNG' or  $extention == 'JPG')
 
-                                        <img class="img-thumbnail" style="max-width: 65%"  src="{{asset("PostedFiles/".$rep->attachment)}}"/>
+                                    <img class="img-thumbnail" style="max-width: 65%"  src="{{asset("PostedFiles/".$rep->attachment)}}"/>
 
                                 @elseif($extention == 'pdf' or $extention == 'docx' or $extention == 'doc' or $extention == 'ppt' or $extention == 'pptx' or $extention == 'ppsx' or $extention == 'txt')
                                     <h2><u><span class="glyphicon glyphicon-file"></span>{{$rep->attachment}}</u></h2>

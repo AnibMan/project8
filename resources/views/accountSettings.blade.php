@@ -213,9 +213,7 @@
                     </h4>
                 </div>
                 <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <div class="panel-body">Delete Account and all your data? <button class="btn btn-danger">DELETE</button> </div>
                 </div>
             </div>
         </div>

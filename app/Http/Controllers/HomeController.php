@@ -135,8 +135,9 @@ class HomeController extends Controller
     public function accountSettings(){
         $authUser = Auth::user();
         $username = $authUser->username;
-
-        return view('accountSettings',compact("username","authUser"));
+        $sf = Studyfield::groupBy("faculty")->pluck('faculty');
+        $sfLvl = Studyfield::groupBy("level")->pluck('level');
+        return view('accountSettings',compact("username","authUser","sf","sfLvl"));
     }
 
     public function updateUser(Request $req){
@@ -166,6 +167,21 @@ class HomeController extends Controller
                 return redirect()->back()->withErrors(['oldPass'=>'Current password did not match.']);
             }
             return redirect()->back()->withErrors(['success'=>'Password Changed']);
+
+        }
+
+        if($req->has('addDeg')){
+            $sf_user = new studyfield_user;
+            $sf_id = Studyfield::where('degree',$req->InstitutionDegree)->pluck('sf_id')->first();
+            if((studyfield_user::where('sf_id',$sf_id)->pluck('sf_id')->first()) != null){
+                return redirect()->back()->withErrors(['success'=>'Already added this field.']);
+            }else{
+                $sf_user->sf_id = $sf_id;
+                $sf_user->u_id = Auth::user()->u_id;
+                $sf_user->save();
+                return redirect()->back()->withErrors(['success'=>'Successfully added new degree.']);
+            }
+
 
         }
 

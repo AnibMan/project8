@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid" id="mainRow" style="background-color: white;padding-bottom: 10px">
+    <div class="container-fluid" id="mainRow" style="background-color: whitesmoke;padding-bottom: 10px">
         <div class="container">
             <form method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

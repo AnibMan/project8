@@ -61,7 +61,7 @@
             @endif
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="#"> About</a></li>
+                <li><a href="#"> <span class="glyphicon glyphicon-info-sign"></span> About</a></li>
                 <li> <!-- search bar -->
                 </li>
             </ul>

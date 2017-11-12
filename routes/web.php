@@ -43,6 +43,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/searched', 'PrimeController@searchResult');
 
+
+
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/profile', 'AdminController@showprofile');
 Route::get('/admin/update', 'AdminController@updateProfile');

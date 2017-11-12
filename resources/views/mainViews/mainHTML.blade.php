@@ -27,7 +27,7 @@
 
 
 </head>
-<body>
+<body style="background-color: whitesmoke">
 
 @include("mainViews.navbar")
 @yield('content')

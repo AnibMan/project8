@@ -101,30 +101,35 @@ class HomeController extends Controller
     public function storePost(CreatePost $req ){
 
         //to upload attachment file
-        if($req->hasFile('file')){
+        $this->validate($req,['reply' => 'required','file' => 'max:3100']);
+        if($req->hasFile('file')) {
             $filename = $req->file->getClientOriginalName();
-            $req->file->move('PostedFiles',$filename);
-            $rep = new Reply;
-            $rep->u_id = Auth::user()->u_id;
-            if($req->q_id != 'self'){
-                $rep->q_id = $req->q_id;
-                $quest = Question::where('q_id',$req->q_id)->first();
-                $rep->sf_id = $quest->sf_id;
-                $rep->sub_id =$quest->sub_id;
-            }else{
-                $rep->sf_id = Studyfield::where('degree',$req->InstitutionDegree)->pluck("sf_id")->first();
-                $rep->sub_id = Subject::where('sub_name',$req->InstitutionSubject)->pluck("sub_id")->first();
-            }
-            $rep->rep = $req->reply;
-            $rep->attachment = $filename;
-            $rep->save();
-            if($req->q_id != 'self') {
-                return redirect('/reply/' . $req->q_id);
-            }else return redirect('/home');
-
-
+            $req->file->move('PostedFiles', $filename);
+        }else{
+            $filename = null;
         }
-        return 'error';
+        $rep = new Reply;
+        $rep->u_id = Auth::user()->u_id;
+        if($req->q_id != 'self'){
+            $rep->q_id = $req->q_id;
+            $quest = Question::where('q_id',$req->q_id)->first();
+            $rep->sf_id = $quest->sf_id;
+            $rep->sub_id =$quest->sub_id;
+        }else{
+            $this->validate($req,['InstitutionSubject' => 'required','InstitutionDegree' => 'required']);
+
+            $rep->sf_id = Studyfield::where('degree',$req->InstitutionDegree)->pluck("sf_id")->first();
+            $rep->sub_id = Subject::where('sub_name',$req->InstitutionSubject)->pluck("sub_id")->first();
+        }
+        $rep->rep = $req->reply;
+        $rep->attachment = $filename;
+        $rep->save();
+        if($req->q_id != 'self') {
+            return redirect('/reply/' . $req->q_id);
+        }else return redirect('/home');
+
+
+
     }
 
     public function accountSettings(){
@@ -168,8 +173,8 @@ class HomeController extends Controller
 
 
     }
-<<<<<<< HEAD
-=======
+
+
 
 
     public function storeComment(Request $req,$q_id){
@@ -183,7 +188,6 @@ class HomeController extends Controller
 
     }
 
->>>>>>> a00a1bae6eaf6fe77748c4dbcdb64a5c4f15d875
 
 
 

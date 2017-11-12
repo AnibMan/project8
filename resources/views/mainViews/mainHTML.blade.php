@@ -19,8 +19,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('css/Footer-with-button-logo.css') }}">
 
-
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 
 
 
@@ -29,9 +30,14 @@
 <body>
 
 @include("mainViews.navbar")
-    @yield('content')
+@yield('content')
+
+<div style="padding-bottom: 150px;background-color: whitesmoke">
+
+</div>
 
 
+@include('mainViews.footer')
 
 
 </body>

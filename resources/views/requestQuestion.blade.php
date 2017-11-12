@@ -27,20 +27,24 @@
 
 
             </form>
-            <div class="container-fluid" style="background-color: #880000;color: white;padding-bottom: 20px">
+
                 @if($errors->any())
-                    <h3>Sorry Error Occoured:</h3>
+                <div id="err" class="container-fluid" style="padding-bottom: 20px;margin-top: 5px">
+                    <span style="color: #a94442"><h3>Sorry!</h3></span>
                     @foreach($errors->all() as $error)
-                        <li>{{$error}}</li>
+                        <strong><span style="color: #a94442"><li>{{$error}}</li></span></strong>
                     @endforeach
+                </div>
                 @endif
 
-            </div>
+
 
         </div>
     </div>
 
-
+    <script>
+        $("html, body").animate({ scrollTop: $('#err').offset().top }, 2000);
+    </script>
 @endsection
 
 

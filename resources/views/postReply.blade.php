@@ -72,18 +72,19 @@
                     <div class="col-md-8" >
                         <div  style="padding-top: 5px;padding-bottom: 0px;padding-left: 10px ;background-color: white;margin-top: 10px;border: 1px solid lightgray;border-radius: 3px;">
 
-                            <h4> <span class="glyphicon glyphicon-education" style="color: #1e90ff">  <b>{{$queUser}}:</b> </span> </h4>
+                            <h4> <span class="glyphicon glyphicon-education" style="color: #1e90ff">  <b>{{App\User::find($rep->u_id)->username}}:</b> </span> </h4>
                             <div style="border-top: 1px solid darkgray">
-                                <h4><span class="glyphicon glyphicon-hand-right"></span> {{$rep->rep}}</h4>
+                                <h4><span class="glyphicon glyphicon-tag"></span> {{$rep->rep}}</h4>
                             </div>
-                            <div style="border-bottom: 1px solid darkgray">
+                            <div style="border-bottom: 1px solid darkgray;padding-bottom: 7px;overflow: hidden;max-height: 50vmax;">
                                 <?php $extention = pathinfo($rep->attachment, PATHINFO_EXTENSION) ?>
                                 @if($extention == 'jpg' or $extention == 'png' or $extention == 'JPEG' or  $extention == 'PNG' or  $extention == 'JPG')
-                                    <div style="width: 50%;height:50%;text-align: center">
-                                        <img src="{{asset("PostedFiles/".$rep->attachment)}}" width=75% height=75%/>
-                                    </div>
+
+                                        <img class="img-thumbnail" style="max-width: 65%"  src="{{asset("PostedFiles/".$rep->attachment)}}"/>
+
                                 @elseif($extention == 'pdf' or $extention == 'docx' or $extention == 'doc' or $extention == 'ppt' or $extention == 'pptx' or $extention == 'ppsx' or $extention == 'txt')
-                                    <a class="btn btn-info" href="{{url('download/'.$rep->attachment)}}"> <span class="glyphicon glyphicon-download-alt"></span> Download</a>
+                                    <h2><u><span class="glyphicon glyphicon-file"></span>{{$rep->attachment}}</u></h2>
+                                    <h4><a  href="{{url('download/'.$rep->attachment)}}"> <span class="glyphicon glyphicon-download-alt"></span> Download</a></h4>
                                 @endif
                             </div>
 

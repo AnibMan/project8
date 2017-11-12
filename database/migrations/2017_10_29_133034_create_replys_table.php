@@ -18,7 +18,7 @@ class CreateReplysTable extends Migration
             $table->integer('u_id')->unsigned();
             $table->integer('q_id')->unsigned()->nullable();
             $table->string('rep',255);
-            $table->string('attachment',255);
+            $table->string('attachment',255)->nullable();
 
             $table->foreign('q_id')
                 ->references('q_id')

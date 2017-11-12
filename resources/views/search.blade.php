@@ -1,4 +1,6 @@
-<form id="form-search">
+<form id="form-search" method="get" action="/searched">
+    {{ csrf_field() }}
+
     <div class="form-group">
         <label for="InstitutionFaculty">Faculty:</label></br>
 
@@ -31,7 +33,7 @@
                     foreach($ary as $val){
                         echo '<option value="'.$val.'">'.$val.'</option>';
                     }
-                            ?>
+                    ?>
                 </select>
             </div>
         </div>
@@ -39,7 +41,14 @@
 
 
     <div class="form-group">
-        <label for="InstitutionDegree">Degree:</label></br>
+        <label for="InstitutionDegree">Degree:
+        @if ($errors->has('InstitutionDegree'))
+
+                                        <font color="#dc143c"> <h4> Sorry: {{ $errors->first('InstitutionDegree') }} For this search.</h4> </font>
+
+        @endif
+        </label>
+        <br>
         <select name="InstitutionDegree" id="InstitutionDegree" onchange="subjectAjax()" size="1" class="form-control">
 
 
@@ -56,7 +65,9 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Search</button>
+    <input type="submit" class="btn btn-primary" value="search" name="searchFromData">
+
+
 </form>
 
 <script src="js/ajaxCall.js">

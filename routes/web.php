@@ -13,6 +13,8 @@
 
 Route::get('/', 'PrimeController@index');
 
+Route::get('/searched', 'PrimeController@searchResult');
+
 Route::get('/getDegreeAjax/{faculty}/{level}', 'AjaxResponse@getDegree');
 
 Route::get('/getSubjectAjax/{semester}/{degree}', 'AjaxResponse@getSubject');
@@ -39,6 +41,7 @@ Route::post('/account', 'HomeController@updateUser');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/searched', 'PrimeController@searchResult');
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/profile', 'AdminController@showprofile');

@@ -108,6 +108,11 @@
 
 
                                     </select>
+                                    @if ($errors->has('InstitutionDegree'))
+                                        <span class="help-block">
+                                        <strong><span style="color: #a94442">{{ $errors->first('InstitutionDegree') }}</span> </strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                             <script src="js/ajaxCall.js">
@@ -127,15 +132,7 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="container-fluid" style="background-color: #880000;color: white;padding-bottom: 20px">
-                            @if($errors->any())
-                                <h3>Sorry Error Occoured:</h3>
-                                @foreach($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                @endforeach
-                            @endif
 
-                        </div>
                     </div>
                 </div>
             </div>

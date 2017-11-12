@@ -45,7 +45,7 @@ function degreeAjax(){
             //default value
             var deful = document.createElement("option");
             deful.setAttribute("value", "");
-            deful.innerHTML ="---Select Degree--";
+            deful.innerHTML ="---Select Degree---";
             opt.appendChild(deful);
 
             var jsonObj = JSON.parse(xhttp.responseText);
@@ -91,6 +91,11 @@ function subjectAjax(){
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState==4 && xhttp.status==200){
+            //default value
+            var deful = document.createElement("option");
+            deful.setAttribute("value", "");
+            deful.innerHTML ="---Select Degree---";
+            opt.appendChild(deful);
             var jsonObj = JSON.parse(xhttp.responseText);
             //document.getElementById("InstitutionDegree").innerHTML = jsonObj[0];
             var x;

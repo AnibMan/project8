@@ -29,11 +29,22 @@
                     @include("fieldOfStudy")
                 @endif
                 <input type="submit" name="PostReply" value="Post" class="btn btn-info">
+
+                @if($errors->any())
+                    <div id="er" class="container-fluid" style="padding-bottom: 20px;margin-top: 5px">
+                        <span style="color: #a94442"><h3>Sorry!</h3></span>
+                        @foreach($errors->all() as $error)
+                            <strong><span style="color: #a94442"><li>{{$error}}</li></span></strong>
+                        @endforeach
+                    </div>
+                @endif
             </form>
 
         </div>
     </div>
-
+    <script>
+        $("html, body").animate({ scrollTop: $('#er').offset().top }, 2000);
+    </script>
 @endsection
 
 

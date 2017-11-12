@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid" >
+    <div class="container-fluid" style="background-color: whitesmoke">
         <div class="row" id="mainRow" >
 
             <div class="col-sm-6 col-xs-12 col-lg-6 col-md-6" id="descriptionRow">
@@ -22,10 +22,13 @@
 
 
         </div>
-    </div>
 
-  <div class="container" style="padding-top: 50px;float: left;margin-left: 50px">
 
-        @include("mainViews.showQuestion")
+
+
+        <div class="container" style="padding-top: 50px;float: left;margin-left: 50px">
+
+            @include("mainViews.showQuestion")
+        </div>
     </div>
 @endsection

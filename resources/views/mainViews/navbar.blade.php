@@ -33,6 +33,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="#1e90ff"><span class="glyphicon glyphicon-education"></span> {{$username}}<span class="caret"></span></font></a>
                         <ul class="dropdown-menu">
+                            @if(App\admin::where('u_id',\Illuminate\Support\Facades\Auth::user()->u_id)->first() != null)
+                                <li><a href="/admin"><font color="#1e90ff"><span class="glyphicon glyphicon-star"></span> Admin</font></a></li>
+                            @endif
                             <li><a href="/account"><font color="#1e90ff"><span class="glyphicon glyphicon-user"></span> Account</font></a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
